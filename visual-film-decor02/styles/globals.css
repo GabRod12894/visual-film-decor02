@@ -1,0 +1,282 @@
+  /* Botão de solicitar orçamento: verde vibrante */
+  .btn-orcamento, .solicitar-orcamento {
+    background-color: #22c55e;
+    color: #fff;
+    border-radius: var(--radius-md);
+    box-shadow: 0 2px 8px #22c55e44;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+  .btn-orcamento:hover, .solicitar-orcamento:hover {
+    background-color: #16a34a;
+    color: #fff;
+  }
+/* Importa utilitários do Tailwind CSS */
+@import 'tailwindcss';
+/* Importa animações do Tailwind CSS */
+@import 'tw-animate-css';
+
+/* Variante customizada para modo escuro (plugin específico) */
+@custom-variant dark (&:is(.dark *));
+
+/* Variáveis globais para temas e cores */
+:root {
+  /* Cor de fundo principal */
+  --background: oklch(1 0 0);
+  /* Cor do texto principal */
+  --foreground: oklch(0.145 0 0);
+  /* Cor de fundo de cards */
+  --card: oklch(1 0 0);
+  /* Cor do texto em cards */
+  --card-foreground: oklch(0.145 0 0);
+  /* Cor de fundo de popover */
+  --popover: oklch(1 0 0);
+  /* Cor do texto em popover */
+  --popover-foreground: oklch(0.145 0 0);
+  /* Cor primária */
+  --primary: oklch(0.205 0 0);
+  /* Cor do texto sobre primária */
+  --primary-foreground: oklch(0.985 0 0);
+  /* Cor secundária */
+  --secondary: oklch(0.97 0 0);
+  /* Cor do texto sobre secundária */
+  --secondary-foreground: oklch(0.205 0 0);
+  /* Cor para elementos desabilitados/mutados */
+  --muted: oklch(0.97 0 0);
+  /* Cor do texto mutado */
+  --muted-foreground: oklch(0.556 0 0);
+  /* Cor de destaque/accent */
+  --accent: oklch(0.97 0 0);
+  /* Cor do texto sobre accent */
+  --accent-foreground: oklch(0.205 0 0);
+  /* Cor para ações destrutivas (ex: erro) */
+  --destructive: oklch(0.577 0.245 27.325);
+  /* Cor do texto sobre destrutivo */
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  /* Cor das bordas */
+  --border: oklch(0.922 0 0);
+  /* Cor de fundo de inputs */
+  --input: oklch(0.922 0 0);
+  /* Cor do anel de foco */
+  --ring: oklch(0.708 0 0);
+  /* Cor de gráfico 1 */
+  --chart-1: oklch(0.646 0.222 41.116);
+  /* Cor de gráfico 2 */
+  --chart-2: oklch(0.6 0.118 184.704);
+  /* Cor de gráfico 3 */
+  --chart-3: oklch(0.398 0.07 227.392);
+  /* Cor de gráfico 4 */
+  --chart-4: oklch(0.828 0.189 84.429);
+  /* Cor de gráfico 5 */
+  --chart-5: oklch(0.769 0.188 70.08);
+  /* Raio de borda padrão */
+  --radius: 0.625rem;
+  /* Cor de fundo da sidebar */
+  --sidebar: oklch(0.985 0 0);
+  /* Cor do texto na sidebar */
+  --sidebar-foreground: oklch(0.145 0 0);
+  /* Cor primária da sidebar */
+  --sidebar-primary: oklch(0.205 0 0);
+  /* Cor do texto primário na sidebar */
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  /* Cor de destaque na sidebar */
+  --sidebar-accent: oklch(0.97 0 0);
+  /* Cor do texto de destaque na sidebar */
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  /* Cor da borda da sidebar */
+  --sidebar-border: oklch(0.922 0 0);
+  /* Cor do anel da sidebar */
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+/* Variáveis para modo escuro */
+.dark {
+  /* Cor de fundo escura */
+  --background: oklch(27.814% 0.18512 266.977);
+  /* Cor do texto escuro */
+  --foreground: oklch(0.985 0 0);
+  /* Cor de fundo de card escuro */
+  --card: oklch(27.814% 0.18512 266.977);
+  /* Cor do texto em card escuro */
+  --card-foreground: oklch(0.985 0 0);
+  /* Cor de fundo de popover escuro */
+  --popover: oklch(27.814% 0.18512 266.977);
+  /* Cor do texto em popover escuro */
+  --popover-foreground: oklch(0.985 0 0);
+  /* Cor primária escura */
+  --primary: oklch(0.985 0 0);
+  /* Cor do texto sobre primária escura */
+  --primary-foreground: oklch(27.814% 0.18512 266.977);
+  /* Cor secundária escura */
+  --secondary: oklch(26.862% 0.00003 271.152);
+  /* Cor do texto sobre secundária escura */
+  --secondary-foreground: oklch(0.985 0 0);
+  /* Cor mutada escura */
+  --muted: oklch(0.269 0 0);
+  /* Cor do texto mutado escuro */
+  --muted-foreground: oklch(0.708 0 0);
+  /* Cor de destaque escura */
+  --accent: oklch(0.269 0 0);
+  /* Cor do texto sobre destaque escuro */
+  --accent-foreground: oklch(0.985 0 0);
+  /* Cor destrutiva escura */
+  --destructive: oklch(0.396 0.141 25.723);
+  /* Cor do texto destrutivo escuro */
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  /* Cor da borda escura */
+  --border: oklch(0.269 0 0);
+  /* Cor de input escuro */
+  --input: oklch(0.269 0 0);
+  /* Cor do anel escuro */
+  --ring: oklch(0.439 0 0);
+  /* Cor de gráfico 1 escuro */
+  --chart-1: oklch(0.488 0.243 264.376);
+  /* Cor de gráfico 2 escuro */
+  --chart-2: oklch(0.696 0.17 162.48);
+  /* Cor de gráfico 3 escuro */
+  --chart-3: oklch(0.769 0.188 70.08);
+  /* Cor de gráfico 4 escuro */
+  --chart-4: oklch(0.627 0.265 303.9);
+  /* Cor de gráfico 5 escuro */
+  --chart-5: oklch(0.645 0.246 16.439);
+  /* Cor de fundo da sidebar escura */
+  --sidebar: oklch(27.814% 0.18512 266.977);
+  /* Cor do texto na sidebar escura */
+  --sidebar-foreground: oklch(0.985 0 0);
+  /* Cor primária da sidebar escura */
+  --sidebar-primary: oklch(27.814% 0.18512 266.977);
+  /* Cor do texto primário na sidebar escura */
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  /* Cor de destaque na sidebar escura */
+  --sidebar-accent: oklch(0.269 0 0);
+  /* Cor do texto de destaque na sidebar escura */
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  /* Cor da borda da sidebar escura */
+  --sidebar-border: oklch(0.269 0 0);
+  /* Cor do anel da sidebar escura */
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+/* Tema inline para fontes e cores customizadas */
+@theme inline {
+  /* Fonte principal customizada */
+  --font-sans: var(--font-geist-sans);
+  /* Fonte monoespaçada customizada */
+  --font-mono: var(--font-geist-mono);
+  /* Cor de fundo do tema */
+  --color-background: var(--background);
+  /* Cor do texto do tema */
+  --color-foreground: var(--foreground);
+  /* Cor de fundo de card do tema */
+  --color-card: var(--card);
+  /* Cor do texto em card do tema */
+  --color-card-foreground: var(--card-foreground);
+  /* Cor de fundo de popover do tema */
+  --color-popover: var(--popover);
+  /* Cor do texto em popover do tema */
+  --color-popover-foreground: var(--popover-foreground);
+  /* Cor primária do tema */
+  --color-primary: var(--primary);
+  /* Cor do texto sobre primária do tema */
+  --color-primary-foreground: var(--primary-foreground);
+  /* Cor secundária do tema */
+  --color-secondary: var(--secondary);
+  /* Cor do texto sobre secundária do tema */
+  --color-secondary-foreground: var(--secondary-foreground);
+  /* Cor mutada do tema */
+  --color-muted: var(--muted);
+  /* Cor do texto mutado do tema */
+  --color-muted-foreground: var(--muted-foreground);
+  /* Cor de destaque do tema */
+  --color-accent: var(--accent);
+  /* Cor do texto sobre destaque do tema */
+  --color-accent-foreground: var(--accent-foreground);
+  /* Cor destrutiva do tema */
+  --color-destructive: var(--destructive);
+  /* Cor do texto destrutivo do tema */
+  --color-destructive-foreground: var(--destructive-foreground);
+  /* Cor da borda do tema */
+  --color-border: var(--border);
+  /* Cor de input do tema */
+  --color-input: var(--input);
+  /* Cor do anel do tema */
+  --color-ring: var(--ring);
+  /* Cor de gráfico 1 do tema */
+  --color-chart-1: var(--chart-1);
+  /* Cor de gráfico 2 do tema */
+  --color-chart-2: var(--chart-2);
+  /* Cor de gráfico 3 do tema */
+  --color-chart-3: var(--chart-3);
+  /* Cor de gráfico 4 do tema */
+  --color-chart-4: var(--chart-4);
+  /* Cor de gráfico 5 do tema */
+  --color-chart-5: var(--chart-5);
+  /* Raio pequeno do tema */
+  --radius-sm: calc(var(--radius) - 4px);
+  /* Raio médio do tema */
+  --radius-md: calc(var(--radius) - 2px);
+  /* Raio grande do tema */
+  --radius-lg: var(--radius);
+  /* Raio extra grande do tema */
+  --radius-xl: calc(var(--radius) + 4px);
+  /* Cor de fundo da sidebar do tema */
+  --color-sidebar: var(--sidebar);
+  /* Cor do texto na sidebar do tema */
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  /* Cor primária da sidebar do tema */
+  --color-sidebar-primary: var(--sidebar-primary);
+  /* Cor do texto primário na sidebar do tema */
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  /* Cor de destaque na sidebar do tema */
+  --color-sidebar-accent: var(--sidebar-accent);
+  /* Cor do texto de destaque na sidebar do tema */
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  /* Cor da borda da sidebar do tema */
+  --color-sidebar-border: var(--sidebar-border);
+  /* Cor do anel da sidebar do tema */
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* Estilos base para todos os elementos */
+@layer base {
+  /* Aplica borda e outline em todos os elementos */
+  * {
+  @apply border-border outline-ring/50;
+  }
+  /* Aplica cor de fundo e texto no body */
+  body {
+  @apply bg-background text-foreground;
+  }
+  /* Função dos proprietários: aumenta contraste, peso e tamanho */
+  /* Função dos proprietários e textos secundários: contraste e legibilidade */
+  .text-secondary.font-medium, .text-muted-foreground {
+    color: var(--primary-foreground);
+    font-weight: 500;
+    font-size: 1.08rem;
+    opacity: 0.95;
+    letter-spacing: 0.01em;
+  }
+  /* Nome Gabriel Rodrigues: adiciona margem superior para centralizar */
+  /* Títulos dos cards: destaque com cor primária e sombra leve */
+  .card-gabriel-title, .text-xl.font-serif, .text-2xl.font-serif, .text-3xl.font-serif, .text-4xl.font-serif {
+    margin-top: 1.25rem;
+    color: var(--primary);
+    text-shadow: 0 2px 8px var(--secondary);
+  }
+  /* Fundo dos cards: tom pastel suave */
+  .bg-card {
+    background-color: oklch(0.98 0.01 80);
+  }
+  /* Botões principais: cor primária, hover vibrante */
+  .btn, .Button, .button, .bg-primary {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    border-radius: var(--radius-md);
+    box-shadow: 0 2px 8px var(--primary);
+    transition: background 0.2s;
+  }
+  .btn:hover, .Button:hover, .button:hover, .bg-primary:hover {
+    background-color: oklch(0.25 0.01 80);
+    color: var(--primary-foreground);
+  }
+}
